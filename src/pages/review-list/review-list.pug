@@ -1,0 +1,29 @@
+extends ../layout/layout
+
+block container
+
+  - const data = require('./data.json')
+
+  #review-list-pg
+
+    .container
+
+      .filter
+        
+        +multiple-select('Площадка', 'sources', data.sources)
+      
+        +search-select('Товар', 'goods', data.goods)
+
+        +select('В выдаче', 'in-search', ['Не выбрано', 'Не выбрано', 'Да', 'Нет'])
+
+        +select('Статус', 'status', ['Новый', 'Новый', 'Обработан'])
+        
+        +select-input('autor', 'Автор', 'Введите имя')
+        
+        +rating-select('Рейтинг', 'rating')
+
+        +date-select
+        
+      .content
+
+        +reviews('review-list')

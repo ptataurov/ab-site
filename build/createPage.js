@@ -37,7 +37,7 @@ writeFileSync(
 block title
   title
 
-block content
+block container
 
   include ./_imports/import
 

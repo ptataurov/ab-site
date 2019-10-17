@@ -1,0 +1,21 @@
+mixin modal(title, body, labelBtn, name, isShow, isFooterShow, mixes)
+
+  .modal(class=(mixes) && `${mixes}__modal` class=(isShow) && 'modal--show fade-in' class=(!isShow) && 'fade-out' data-name=`${name}`)
+    form(action="" method="POST")
+      header.modal__header
+        h6.modal__title= title
+        button.modal__btn-close
+
+      .modal__body
+          if (- Array.isArray(body))
+            each input in body
+
+              .modal__input-group
+                +input(input.label, input.placeholder, input.type)
+          else
+            != `${body}`
+
+      if (isFooterShow)
+        footer.modal__footer
+          +btn(labelBtn, 'submit')
+      

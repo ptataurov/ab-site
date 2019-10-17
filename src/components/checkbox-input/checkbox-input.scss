@@ -1,0 +1,36 @@
+.checkbox-input {
+}
+
+.checkbox-input__label {
+  margin-bottom: 16px;
+  color: #a3a7b1;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 1.12px;
+  text-transform: uppercase;
+}
+
+// Media queries
+
+@include less-xl {
+}
+
+@include less-lg {
+}
+
+@include less-md {
+}
+
+@include less-sm {
+}
+
+// Mixes
+
+.checkbox-input .checkbox-input__checkbox-label {
+  color: #26212b;
+
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+}

@@ -1,4 +1,5 @@
-mixin btn(mixes)
-  include ./_imports/import
-
-  .btn(class=(mixes) && `${mixes}__btn`)
+mixin btn(textContent, type, classType, mixes, isLink)
+  if (isLink)
+    a.btn(class=(classType) && `${classType}` class=(mixes) && `${mixes}__btn` href='#')= textContent
+  else
+    button.btn(class=(classType) && `${classType}` class=(mixes) && `${mixes}__btn` type=(type) ? `${type}` : 'button')= textContent

@@ -1,0 +1,6 @@
+mixin indicators-section(items, isSimple, mixes)
+
+  section.indicators-section(class=(mixes) && `${mixes}__indicators-section`)
+
+    each item in items
+      +indicator(item.type, item.value, isSimple, item.isNegative, item.gradient, 'indicators-section')

@@ -1,0 +1,45 @@
+.tabs {
+  @include container;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -40px;
+  border-bottom: 1px solid #e9ebf0;
+}
+
+.tabs__container {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+}
+
+.tabs__btn {
+  margin-bottom: -2px;
+  padding: 15px 0;
+  color: #7f8289;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 18px;
+  border-bottom: 4px solid transparent;
+
+  &:hover {
+    color: #26212b;
+  }
+
+  &--active {
+    color: #26212b;
+    font-weight: 500;
+    border-bottom: 4px solid #5ad4a1;
+  }
+}
+
+.tab {
+  &--hidden {
+    display: none;
+  }
+}
+
+// Mixes
+
+.tabs__tooltip {
+  margin-left: 5px;
+}

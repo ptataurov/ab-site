@@ -1,0 +1,27 @@
+mixin table-most-commented(mixes)
+  
+  .table(class=(mixes) && `${mixes}__table`)
+    header.table__header
+      h3.table__title.h3 Самые комментируемые товары
+      +btn-export('table')
+
+    .table__scroll-wrap
+      table.table__self#table-export
+        thead.table__head
+          tr
+            each item in ['Название', 'Отзывы']
+              th.table__head-title= item
+
+        tbody.table__body
+          each item in [1, 2, 3, 4, 5]
+            tr
+              td
+                .table__product-name-group 
+                  span.table__product-logo
+                    img.table__product-img(src=require('../../components/table-most-commented/img/item.png') alt='Изображение товара')
+                  a(href='#')
+                    p.table__product-name Однорычажный смеситель для кухни (мойки) Grohe BauEdge 31367000
+              td 
+                a(href='#') 91
+    
+

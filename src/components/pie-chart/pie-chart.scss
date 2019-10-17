@@ -1,0 +1,25 @@
+.pie-chart {
+	display: flex;
+	flex-direction: column;
+	min-height: 480px;
+	padding: 30px;
+	overflow: hidden;
+	background: #fff;
+	border-radius: 4px;
+	box-shadow: -2px 2px 4px rgba(128, 152, 213, 0.074983);
+	transform: none;
+
+	.pie-chart__scroll-wrap {
+		display: flex;
+		flex-grow: 1;
+		flex-direction: column;
+		width: 100%;
+		overflow: auto;
+	}
+
+	.pie-chart__container {
+		flex-grow: 1;
+		width: 100%;
+		min-width: 720px;
+	}
+}

@@ -1,0 +1,33 @@
+extends ../layout/layout
+
+block container
+
+  - const data = require('./data.json')
+
+  #reputation-pg
+
+    .container
+
+      .filter
+        
+        +select('Выдача', 'date-sort', ['По месяцам', 'По месяцам', 'По неделям', 'По дням'])
+        
+        +checkbox-select('increasing', 'Нарастающий')
+      
+        +checkbox-select('all', 'Все')
+
+        +select('Категории', 'category', data.categorySelect)
+
+      .content
+      
+        +indicators-section(data.indicatorsData, false, 'reputation-pg')
+
+        +area-chart('reputation', 'reputation-pg')
+
+        +table(data.tableData, true, 'reputation-pg')
+
+        +table-most-commented
+
+        +table-goods
+
+

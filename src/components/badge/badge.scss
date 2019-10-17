@@ -1,0 +1,35 @@
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  color: #fff;
+  font-size: 11px;
+  line-height: 1;
+  text-align: center;
+  background-color: #e53654;
+  border-radius: 10px;
+}
+
+.badge-primary { color:#FFF; background-color: #2E5BFF; }
+.badge-secondary { color:#FFF; background-color: #554B60; }
+.badge-success { color:#FFF; background-color: #5AD6A1; }
+.badge-danger { color:#FFF; background-color: #E53654; }
+.badge-warning { color:#FFF; background-color: #FAD050; }
+.badge-info { color:#FFF; background-color: #29B1CC; }
+.badge-light { color:#26212B; background-color: #D8D8D8; }
+.badge-dark { color:#FFF; background-color: #4A4A4A; }
+
+// Media queries
+
+@include less-xl {
+}
+
+@include less-lg {
+}
+
+@include less-md {
+}
+
+@include less-sm {
+}
+
+// Mixes

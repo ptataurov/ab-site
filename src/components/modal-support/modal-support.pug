@@ -1,0 +1,9 @@
+mixin modal-support(mixes)
+
+  - 
+    const modalBody = `
+      <p class="text">По вопросам поддержки звоните:</p>
+      <a class="h3" href="tel:+74950888809">+7 (495) 088-8809</a>
+    `
+
+  +modal('Поддержка', modalBody, null, 'support', false, false)

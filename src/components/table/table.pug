@@ -1,0 +1,31 @@
+mixin table(data, isBtnExport, mixes)
+
+  .table(class=(mixes) && `${mixes}__table`)
+    header.table__header
+      if(isBtnExport)
+        +btn-export('table')
+
+    .table__scroll-wrap
+      table.table__self#table-export
+        thead.table__head
+          tr
+            each header, idx in data.headers
+              th.table__head-title.table__head-title--sort-up
+                .table__head-container
+                  a(href="#")
+                    | #{header}
+                    include ~@/public/img/icons/arrow.svg
+                  +tooltip(false, 'table')
+
+        tbody.table__body
+          - var idx = 0;
+          each header in data.headers
+            - var n = 0;
+            tr
+              while n++ < data.headers.length
+                td!= data.self[idx++]
+    
+    .table__more
+      button.table__btn-more(type='button' data-url='http://localhost:8081/cabinet/reputation/reviews/more?' data-page='1') Показать еще 50
+      +spinner(true, 'table')
+    

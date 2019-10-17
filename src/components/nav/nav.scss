@@ -1,0 +1,29 @@
+.nav {
+  @include container;
+  display: flex;
+  border-bottom: 1px solid #e9ebf0;
+}
+
+.nav__link {
+  margin-bottom: -2px;
+  padding: 15px 0;
+  color: #7f8289;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 18px;
+  border-bottom: 4px solid transparent;
+
+  &:not(:last-child) {
+    margin-right: 40px;
+  }
+
+  &:hover {
+    color: #26212b;
+  }
+
+  &--active {
+    color: #26212b;
+    font-weight: 500;
+    border-bottom: 4px solid #5ad4a1;
+  }
+}

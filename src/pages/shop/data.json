@@ -1,0 +1,28 @@
+{
+  "tabs": [
+    {
+      "label": "Общая информация",
+      "target": "common"
+    },
+    {
+      "label": "Доля полки",
+      "target": "part"
+    },
+    {
+      "label": "Ассортимент",
+      "target": "assortment"
+    }
+  ],
+  "indicatorsData": [
+    {
+      "type": "Всего товаров",
+      "value": "5500",
+      "isNegative": false
+    },
+    {
+      "type": "Доля полки",
+      "value": "205",
+      "isNegative": false
+    }
+  ]
+}

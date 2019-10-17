@@ -1,0 +1,81 @@
+extends ~@/pages/layout/layout
+
+block title
+  title
+
+block container
+
+  - const data = require('./data.json')
+
+
+  #dashboard-pg
+    +nav(0, 'dashboard-pg')
+
+    .filter
+      +multiple-select('Площадка', 'sources', data.sources)
+      
+      +search-select('Товар', 'goods', data.goods)
+
+      +select('В выдаче', 'in-search', ['Не выбрано', 'Не выбрано', 'Да', 'Нет'])
+
+      +select-input('autor', 'Автор', 'Введите имя')
+      
+      +rating-select('Рейтинг', 'rating')
+
+      +date-select
+      
+      +btn('Показать')
+
+    .content
+      +reviews('dashboard-pg')
+
+      +table(data.tableData, true, 'dashboard-pg')
+
+      +indicators-section(data.indicatorsData, false, 'dashboard-pg')
+
+      +indicators-section(data.indicatorsGradientData, false, 'dashboard-pg')
+
+      .charts
+
+        .left-charts
+
+          +area-chart(null, 'dashboard-pg')
+
+          +area-chart(null, 'dashboard-pg')
+
+        .right-charts
+
+          +area-chart(null, 'dashboard-pg')
+
+
+      form.form
+        +input('Email', null, 'email', 'settings-pg')
+        +input('Пароль', null, 'password', 'settings-pg')
+    
+        +radio-input('Уведомления о новых отзывах', ['Выключено', 'Все', 'Только негативные'], 'settings-pg')
+        +btn('Сохранить', 'submit')
+
+
+      .btns
+        +btn('Кнопка', 'button')
+        +btn('Кнопка', 'button', 'btn--red')
+        +btn('Кнопка', 'button', 'btn--gray')
+        +btn('Кнопка', 'button', 'btn--outline-blue')
+        +btn('Кнопка', 'button', 'btn--outline-green')
+
+      +spinner(false, 'dashboard-pg')
+
+      h1.h1.dashboard-pg__h1 H1 Заголовок
+      h2.h2.dashboard-pg__h2 H2 Заголовок
+      h3.h3.dashboard-pg__h3 H3 Заголовок
+      h4.h4.dashboard-pg__h4 H4 Заголовок
+
+      p.text Значимость этих проблем настолько очевидна, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям. Значимость этих проблем настолько очевидна, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям.
+      p.text.dashboard-pg__text Значимость этих проблем настолько очевидна, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям.
+     
+      p.sm-text Значимость этих проблем настолько очевидна, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям. Значимость этих проблем настолько очевидна, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям.
+      p.sm-text.dashboard-pg__sm-text Значимость этих проблем настолько очевидна, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям.
+
+      +list(data.list, 'dashboard-pg')
+
+      +modal('Добавить пользователя', data.modalAddUser, 'Войти', 'addUser', true, true, 'dashboard-pg')

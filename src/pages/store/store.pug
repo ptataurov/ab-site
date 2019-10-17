@@ -1,0 +1,28 @@
+extends ~@/pages/layout/layout
+
+block title
+  title
+
+block container
+
+  - const data = require('./data.json')
+
+  #store-pg
+    .filter
+      +select('Категории', 'source_category_id', ['По месяцам', 'По месяцам', 'По неделям', 'По дням'])
+
+    +tabs(data.tabs, 'store-pg')
+
+    .content
+      .tab(data-tab='about')
+        +indicators-section(data.indicators, true, 'store-pg')
+
+        .double-screen
+          +area-chart('shelf', 'brand-pg')
+          +table(data.tableData, false, 'store-pg')
+
+      .tab.tab--hidden(data-tab='shelf')
+        +table(data.tableData, true, 'store-pg')
+
+      .tab.tab--hidden(data-tab='products')
+        +table(data.tableData, true, 'store-pg')

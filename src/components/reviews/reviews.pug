@@ -1,0 +1,268 @@
+mixin reviews(mixes)
+
+  .reviews(class=(mixes) && `${mixes}__reviews`)
+
+    - 
+      const modalBody = `
+        <ul class="reviews__modal-answers-list">
+          <li class="reviews__modal-answers-item">
+            <header class="reviews__modal-answers-header">
+              <img class="reviews__modal-answers-user-img" src=${require('../../components/reviews/img/user.svg')}>
+              <p class="reviews__modal-answers-user-name">Александр</p>
+            </header>
+            <p class="reviews__modal-answers-content text">
+              Айфон это все таки BORK, а это ближе к ХУАВЕЙ            
+            </p>
+            <footer class="reviews__modal-answers-footer">
+              <p class="reviews__modal-answers-date">6 Июня 2018</p>
+            </footer>
+          </li>
+          <li class="reviews__modal-answers-item ml-20">
+            <header class="reviews__modal-answers-header">
+              <img class="reviews__modal-answers-user-img" src=${require('../../components/reviews/img/user.svg')}>
+              <p class="reviews__modal-answers-user-name">Анастасия</p>
+            </header>
+            <p class="reviews__modal-answers-content text">
+              Айфон это все таки BORK, а это ближе к ХУАВЕЙ            
+            </p>
+            <footer class="reviews__modal-answers-footer">
+              <p class="reviews__modal-answers-date">6 Июня 2018</p>
+            </footer>
+          </li>
+          <li class="reviews__modal-answers-item ml-40">
+            <header class="reviews__modal-answers-header">
+              <img class="reviews__modal-answers-user-img" src=${require('../../components/reviews/img/user.svg')}>
+              <p class="reviews__modal-answers-user-name">Вася</p>
+            </header>
+            <p class="reviews__modal-answers-content text">
+              Айфон это все таки BORK, а это ближе к ХУАВЕЙ            
+            </p>
+            <footer class="reviews__modal-answers-footer">
+              <p class="reviews__modal-answers-date">6 Июня 2018</p>
+            </footer>
+          </li>
+          <li class="reviews__modal-answers-item">
+            <header class="reviews__modal-answers-header">
+              <img class="reviews__modal-answers-user-img" src=${require('../../components/reviews/img/user.svg')}>
+              <p class="reviews__modal-answers-user-name">Вася</p>
+            </header>
+            <p class="reviews__modal-answers-content text">
+              Айфон это все таки BORK, а это ближе к ХУАВЕЙ            
+            </p>
+            <footer class="reviews__modal-answers-footer">
+              <p class="reviews__modal-answers-date">6 Июня 2018</p>
+            </footer>
+          </li>
+          <li class="reviews__modal-answers-item">
+            <header class="reviews__modal-answers-header">
+              <img class="reviews__modal-answers-user-img" src=${require('../../components/reviews/img/user.svg')}>
+              <p class="reviews__modal-answers-user-name">Вася</p>
+            </header>
+            <p class="reviews__modal-answers-content text">
+              Айфон это все таки BORK, а это ближе к ХУАВЕЙ            
+            </p>
+            <footer class="reviews__modal-answers-footer">
+              <p class="reviews__modal-answers-date">6 Июня 2018</p>
+            </footer>
+          </li>
+          <li class="reviews__modal-answers-item">
+            <header class="reviews__modal-answers-header">
+              <img class="reviews__modal-answers-user-img" src=${require('../../components/reviews/img/user.svg')}>
+              <p class="reviews__modal-answers-user-name">Вася</p>
+            </header>
+            <p class="reviews__modal-answers-content text">
+              Айфон это все таки BORK, а это ближе к ХУАВЕЙ            
+            </p>
+            <footer class="reviews__modal-answers-footer">
+              <p class="reviews__modal-answers-date">6 Июня 2018</p>
+            </footer>
+          </li>
+          <li class="reviews__modal-answers-item">
+            <header class="reviews__modal-answers-header">
+              <img class="reviews__modal-answers-user-img" src=${require('../../components/reviews/img/user.svg')}>
+              <p class="reviews__modal-answers-user-name">Вася</p>
+            </header>
+            <p class="reviews__modal-answers-content text">
+              Айфон это все таки BORK, а это ближе к ХУАВЕЙ            
+            </p>
+            <footer class="reviews__modal-answers-footer">
+              <p class="reviews__modal-answers-date">6 Июня 2018</p>
+            </footer>
+          </li>
+          <li class="reviews__modal-answers-item">
+            <header class="reviews__modal-answers-header">
+              <img class="reviews__modal-answers-user-img" src=${require('../../components/reviews/img/user.svg')}>
+              <p class="reviews__modal-answers-user-name">Вася</p>
+            </header>
+            <p class="reviews__modal-answers-content text">
+              Айфон это все таки BORK, а это ближе к ХУАВЕЙ            
+            </p>
+            <footer class="reviews__modal-answers-footer">
+              <p class="reviews__modal-answers-date">6 Июня 2018</p>
+            </footer>
+          </li>
+          <li class="reviews__modal-answers-item">
+            <header class="reviews__modal-answers-header">
+              <img class="reviews__modal-answers-user-img" src=${require('../../components/reviews/img/user.svg')}>
+              <p class="reviews__modal-answers-user-name">Вася</p>
+            </header>
+            <p class="reviews__modal-answers-content text">
+              Айфон это все таки BORK, а это ближе к ХУАВЕЙ            
+            </p>
+            <footer class="reviews__modal-answers-footer">
+              <p class="reviews__modal-answers-date">6 Июня 2018</p>
+            </footer>
+          </li>
+        </ul>
+      `
+    
+    +modal('Ответы', modalBody, null, 'answers', false, false)
+    .reviews__table-scroll-wrap
+      table.reviews__table
+        thead.reviews__table-head
+          tr
+            th 
+              .reviews__table-head-title.reviews__table-head-title--sort-up
+                | Дата
+                include ~@/public/img/icons/arrow.svg
+            th
+              .reviews__table-head-title
+                | Пользователь
+                include ~@/public/img/icons/arrow.svg
+            th.reviews__table-head-title Продукт
+            th.reviews__table-head-title Ответы
+            th.reviews__table-head-title Рейтинг
+            th.reviews__table-head-title WWW
+            th.reviews__table-head-title Статус
+            th.reviews__table-head-title Поиск
+            th
+            
+        tbody.reviews__table-body
+          -
+            var items = [
+              {
+                date: '11.06.2019',
+                userImg: null,
+                userName: 'Геннадий',
+                productImg: require('../../components/reviews/img/product-img.png'),
+                productName: 'Душевая кабинка Am Pm Chic 1/4 низкий поддон 90x90 см',
+                answers: 6,
+                rating: 3,
+                domainLogo: require('../../components/reviews/img/logos/leroy.svg'),
+                status: false,
+                searchLogo: require('../../components/reviews/img/logos/yandex.svg')
+              },
+              {
+                date: '11.06.2019',
+                userImg: require('../../components/reviews/img/user-img.png'),
+                userName: 'Юлия',
+                productImg: require('../../components/reviews/img/product-img.png'),
+                productName: 'Душевая кабинка Am Pm Chic 1/4 низкий поддон 90x90 см',
+                answers: 6,
+                rating: 4,
+                domainLogo: require('../../components/reviews/img/logos/leroy.svg'),
+                status: true,
+                searchLogo: null
+              },
+              {
+                date: '11.06.2019',
+                userImg: null,
+                userName: 'Геннадий',
+                productImg: require('../../components/reviews/img/product-img.png'),
+                productName: 'Душевая кабинка Am Pm Chic 1/4 низкий поддон 90x90 см',
+                answers: 6,
+                rating: 3,
+                domainLogo: require('../../components/reviews/img/logos/leroy.svg'),
+                status: false,
+                searchLogo: require('../../components/reviews/img/logos/yandex.svg')
+              },
+              {
+                date: '11.06.2019',
+                userImg: require('../../components/reviews/img/user-img.png'),
+                userName: 'Юлия',
+                productImg: require('../../components/reviews/img/product-img.png'),
+                productName: 'Душевая кабинка Am Pm Chic 1/4 низкий поддон 90x90 см',
+                answers: 6,
+                rating: 4,
+                domainLogo: require('../../components/reviews/img/logos/leroy.svg'),
+                status: true,
+                searchLogo: null
+              },
+              {
+                date: '11.06.2019',
+                userImg: null,
+                userName: 'Геннадий',
+                productImg: require('../../components/reviews/img/product-img.png'),
+                productName: 'Душевая кабинка Am Pm Chic 1/4 низкий поддон 90x90 см',
+                answers: 6,
+                rating: 3,
+                domainLogo: require('../../components/reviews/img/logos/leroy.svg'),
+                status: false,
+                searchLogo: require('../../components/reviews/img/logos/yandex.svg')
+              },
+              {
+                date: '11.06.2019',
+                userImg: require('../../components/reviews/img/user-img.png'),
+                userName: 'Юлия',
+                productImg: require('../../components/reviews/img/product-img.png'),
+                productName: 'Душевая кабинка Am Pm Chic 1/4 низкий поддон 90x90 см',
+                answers: 6,
+                rating: 4,
+                domainLogo: require('../../components/reviews/img/logos/leroy.svg'),
+                status: true,
+                searchLogo: null
+              }
+            ]
+          each item in items
+            tr
+              td.reviews__table-date= item.date
+              td
+                .reviews__table-user-name-group
+                  if (item.userImg)
+                    img.reviews__table-user-img(src=`${item.userImg}`)
+                  else
+                    span.reviews__table-user-img= `${item.userName[0]}`
+                  p.reviews__table-user-name= item.userName
+              td
+                .reviews__table-product-name-group 
+                  span.reviews__table-product-logo
+                    img.reviews__table-product-img(src=`${item.productImg}`)
+                  p.reviews__table-product-name= item.productName
+              td.reviews__table-answers
+                button.reviews__table-answers-btn(type='button')= item.answers
+              td
+                .reviews__table-rating
+                  each star, idx in [1, 2, 3, 4, 5]
+                    if(idx < item.rating)
+                      include ../../public/img/icons/star.svg
+                    else 
+                      include ../../public/img/icons/star-disabled.svg
+
+              td
+                img.reviews__table-domain-logo(src=`${item.domainLogo}` alt='Логотип домена')
+              td
+                +btn-toggle((item.status) ? 'Обработан' : 'Не обработан', item.status)
+
+              td 
+                if (item.searchLogo) 
+                  img.reviews__table-domain-logo(src=`${item.searchLogo}` alt='Логотип поискового движка')
+                else
+                  | Нет
+              td 
+                button.reviews__table-toggle-btn(type='button')
+                  img.reviews__table-toggle-icon(src=require('../../public/img/icons/triangle.svg') alt='Иконка выпадающего списка')
+            tr.reviews__table-review-body
+              td(colspan='9')
+                .reviews__table-review-content-group
+                  p.reviews__table-review-subtitle Достоинства:
+                  p.reviews__table-review-content Все прописала в комментарии
+                .reviews__table-review-content-group
+                  p.reviews__table-review-subtitle Недостатки:
+                  p.reviews__table-review-content Не нашла
+                .reviews__table-review-content-group
+                  p.reviews__table-review-subtitle В целом:
+                  p.reviews__table-review-content Недавно наконец-то достроили дом в Долгопрудном, хотели уже наконец перебираться с Патриков туда, но нужна была ещё внутренняя отделка, а муж работает круглосуточно - так что дизайн-проектом занималась я. Для меня очень важно было не только поддержать общий стиль во всех комнатах - в том числе и в ванной - но и сделать так, чтобы каждая деталь была качественной, максимально комфортной в использовании. Поэтому к смесителям - которые, по моему мнению, должны работать как часы, а не только сверкать хромом и заставлять по полчаса ждать, когда же вода соизволит стать нужной мне температуры. Декоратор предложила несколько в этой ценовой категории, но этот понравился больше всех. Муж, конечно, сначала поворчал, сказал будет не удобно, лучше когда вентили. Но потом посмотрел, опробовал - сказал, отлично. Дальше со слов мужа, в этом не понимаю: Крепится ручка к корпусу довольно крепко, сделан из латуни, очень толстой и надежной. Швов нет, монолитный. Изгиб не плохой, имеется керамический картридж, что тоже хорошо от протеканий. После установки сидит крепко, закрутил, не шатается. В общем и целом советую. Неплохой вариант. Дальше снова от меня. Дизайн очень красивый, смотрится очень оригинально. На раковине сидит хорошо. Ручка крутится легко, без лишних усилий. Довольно крупная, но удобная и для руки мужа, и для моей, и даже дочка сама открывает и закрывает. Не выскальзывает из рук, ходит очень плавно. Если не крутить его в разные стороны, а оставить в одном положении - не нужно регулировать потом температуру воды. И я и муж советуем этот смеситель для покупки!
+    .reviews__more
+      button.reviews__btn-more(type='button' data-url='http://localhost:8081/cabinet/reputation/reviews/more?' data-page='1') Показать еще 50
+      +spinner(true, 'reviews')
+    

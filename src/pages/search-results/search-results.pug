@@ -1,0 +1,22 @@
+extends ../layout/layout
+
+block container
+
+  - const data = require('./data.json')
+
+  #search-results-pg
+
+    .container
+
+      .filter
+        
+        +select('Поиск', 'search-bot', ['Все', 'Все', 'Яндекс', 'Google'])
+
+      .content
+
+        +indicators-section(data.indicatorsData, false, 'search-results-pg')
+
+        +table(data.tableData, true, 'search-results-pg')
+
+    
+    

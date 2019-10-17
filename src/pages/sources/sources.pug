@@ -1,0 +1,18 @@
+extends ../layout/layout
+
+block container
+
+  - const data = require('./data.json')
+
+  #sources-pg
+
+
+    +tabs(data.tabs, 'sources-pg')
+
+    .content
+      .tab(data-tab='sources')
+        +table(data.tableData, true, 'sources-pg')
+
+      .tab.tab--hidden(data-tab='shops')
+        +table(data.tableData, true, 'sources-pg')
+

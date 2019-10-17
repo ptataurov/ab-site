@@ -1,0 +1,11 @@
+mixin input(label, placeholder, type, mixes, isLoseLink, isRequired)
+
+  .input(class=(mixes) && `${mixes}__input` data-required=(isRequired) && 'true')
+    label.input__label
+      | #{label}
+      if(isLoseLink)
+        a.input__lose-link(href="#") Забыли пароль?
+
+      input.input__self(type=(type) ? `${type}` : 'text' placeholder=(placeholder) && `${placeholder}`)
+
+      span.input__alert

@@ -1,0 +1,9 @@
+mixin list(items, mixes)
+
+  ul.list(class=(mixes) && `${mixes}__list`)
+    each item in items
+      li.list__item
+        if(item.label)
+          span.list__label= item.label
+        |&nbsp#{item.value}
+

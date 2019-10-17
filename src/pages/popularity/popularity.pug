@@ -1,0 +1,18 @@
+extends ~@/pages/layout/layout
+
+block title
+  title
+
+block container
+
+  - const data = require('./data.json')
+
+
+  #popularity-pg
+
+    .filter
+
+      +select('Категории', 'category', data.categorySelect)
+
+    .content
+      +area-chart

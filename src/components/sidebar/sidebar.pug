@@ -1,0 +1,77 @@
+mixin sidebar(activeIdx, mixes)
+
+  - const links = require('../../assets/data/links.json')
+
+  .sidebar(class=(mixes) && `${mixes}__sidebar`)
+    .sidebar__top
+      a.sidebar__logo-link(href=`/reputation.html`)
+        img.sidebar__logo(src=require('../../components/sidebar/img/nav-logo.svg') alt='Логотип')
+      .sidebar__hamburger-box
+        .sidebar__hamburger
+          .sidebar__hamburger-inner
+    .sidebar__scroll-wrap
+      .sidebar__body
+        .sidebar__nav
+          h6.sidebar__title Репутация
+          ul.sidebar__list
+            each link, idx in links.reputationLinks
+              li.sidebar__item(class=(activeIdx === idx) && 'sidebar__item--active')
+                a.sidebar__link(href=`${link.href}`)
+                  case link.icon
+                    when 1 
+                      include ../../public/img/icons/links/1.svg
+                      - break
+                    when 2 
+                      include ../../public/img/icons/links/2.svg
+                      - break
+                    when 3 
+                      include ../../public/img/icons/links/3.svg
+                      - break
+                    when 4 
+                      include ../../public/img/icons/links/4.svg
+                      - break
+                    when 5 
+                      include ../../public/img/icons/links/5.svg
+                      - break
+                    when 6 
+                      include ../../public/img/icons/links/6.svg
+                      - break
+
+                  p.sidebar__link-name= link.label
+
+        .sidebar__nav
+          h6.sidebar__title Продажи
+          ul.sidebar__list
+            each link, idx in links.salesLinks
+              li.sidebar__item(class=(activeIdx - 6 === idx) && 'sidebar__item--active')
+                a.sidebar__link(href=`${link.href}`)
+                  case link.icon
+                    when 7 
+                      include ../../public/img/icons/links/7.svg
+                      - break
+                    when 8 
+                      include ../../public/img/icons/links/8.svg
+                      - break
+                    when 9
+                      include ../../public/img/icons/links/9.svg
+                      - break
+                    when 10 
+                      include ../../public/img/icons/links/10.svg
+                      - break
+
+                  p.sidebar__link-name= link.label
+
+      .sidebar__bottom
+        ul.sidebar__bottom-list
+          each link, idx in links.bottomLinks
+            li.sidebar__bottom-item(class=(activeIdx - 10 === idx) && 'sidebar__item--active')
+              a.sidebar__link(href=`${link.href}`)
+                case link.icon
+                  when 11 
+                    include ../../public/img/icons/links/11.svg
+                    - break
+                  when 12
+                    include ../../public/img/icons/links/12.svg
+                    - break
+
+                p.sidebar__link-name= link.label

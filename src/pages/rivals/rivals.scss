@@ -1,0 +1,28 @@
+#rivals-pg {
+}
+
+// Mixes
+
+.rivals-pg__area-chart {
+  margin-bottom: 30px;
+}
+
+.rivals-pg__tabs {
+  margin-bottom: 20px;
+}
+
+.rivals-pg__table {
+  .brand-name {
+    cursor:pointer;
+    width:300px;
+  }
+
+  .brand-active {
+    font-weight: bold;
+  }
+
+  .brand-inactive {
+    color: #9da5b1;
+    cursor:default;
+  }
+}

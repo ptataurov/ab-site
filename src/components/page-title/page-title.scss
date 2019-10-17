@@ -1,0 +1,30 @@
+.page-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.page-title__img {
+  max-width: 50px;
+  margin-right: 10px;
+}
+
+// Media queries
+
+@include less-xl {
+}
+
+@include less-lg {
+}
+
+@include less-md {
+}
+
+@include less-sm {
+}
+
+// Mixes
+
+.page-title__btn {
+  margin-left: auto;
+}

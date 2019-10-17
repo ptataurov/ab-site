@@ -1,0 +1,66 @@
+.radio-input {
+}
+
+.radio-input__label {
+  margin-bottom: 16px;
+  color: #a3a7b1;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 1.12px;
+  text-transform: uppercase;
+}
+
+.radio-input__item {
+  display: flex;
+  align-items: center;
+  color: #26212b;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+  &--check {
+    .radio-input__round {
+      &:after {
+        width: 8px;
+        height: 8px;
+        background-color: #5ad4a1;
+        border-radius: 50%;
+        content: '';
+      }
+    }
+  }
+}
+
+.radio-input__round {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  background-color: #fff;
+  border: 1px solid #e4e6ee;
+  border-radius: 50%;
+}
+
+// Media queries
+
+@include less-xl {
+}
+
+@include less-lg {
+}
+
+@include less-md {
+}
+
+@include less-sm {
+}
+
+// Mixes

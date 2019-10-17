@@ -1,0 +1,62 @@
+#registration-pg {
+  display: flex;
+  min-width: 100vw;
+  min-height: 100vh;
+
+  & > * {
+    flex-basis: 50%;
+  }
+
+  .bg {
+    background: url('../../public/img/bg.jpg') no-repeat left;
+    background-size: cover;
+  }
+
+  .body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content {
+    text-align: center;
+  }
+
+  .logo {
+    margin-bottom: 37px;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    min-width: 385px;
+  }
+}
+
+// Media
+
+@include less-lg {
+  #registration-pg {
+    & > * {
+      flex-basis: 100%;
+    }
+
+    .bg {
+      display: none;
+    }
+  }
+}
+
+@include less-md {
+  #registration-pg {
+    .form {
+      min-width: auto;
+    }
+  }
+}
+
+// Mixes
+
+.registration-pg__input {
+  margin-bottom: 30px;
+}

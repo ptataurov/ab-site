@@ -1,0 +1,64 @@
+#product-pg {
+  .product-content {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: -2px 2px 4px rgba(128, 152, 213, 0.074983);
+  }
+
+  .product-content__img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    margin-right: 40px;
+  }
+}
+
+// Media
+
+@include less-xl {
+  #product-pg {
+    .double-screen {
+      flex-direction: column;
+    }
+
+    .product-content {
+      // flex-direction: column;
+    }
+  }
+}
+
+@include less-md {
+  #product-pg {
+    .product-content {
+      flex-direction: column;
+    }
+
+    .product-content__img {
+      align-self: center;
+      width: auto;
+      height: 100%;
+      max-height: 250px;
+      margin-right: 0;
+    }
+  }
+}
+
+// Mixes
+
+.product-pg__tabs {
+  margin-bottom: 20px;
+}
+
+.product-pg__area-chart {
+  margin-bottom: 20px;
+}
+
+.product-pg__table {
+  margin-bottom: 20px;
+}
+
+

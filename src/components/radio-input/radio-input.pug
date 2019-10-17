@@ -1,0 +1,11 @@
+mixin radio-input(label, items, mixes)
+
+  .radio-input(class=(mixes) && `${mixes}__radio-input` data-value=`${items[0]}`)
+    p.radio-input__label= label
+    ul.radio-input__list
+      each item, idx in items
+        li.radio-input__item(class=(idx === 0) && 'radio-input__item--check' data-value=`${item}`)
+          span.radio-input__round
+          | #{item}
+
+

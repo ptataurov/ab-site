@@ -1,0 +1,17 @@
+extends ~@/pages/layout/layout
+
+block title
+  title
+
+block container
+
+  - const data = require('./data.json')
+
+  #reps-pg
+
+    .content
+
+      .double-screen
+        +pie-chart
+
+        +table(data.tableData, true)

@@ -1,0 +1,29 @@
+extends ~@/pages/layout/layout
+
+block title
+  title
+
+block container
+
+  - const data = require('./data.json')
+
+
+  #prices-pg
+
+    .filter
+
+      +select('Категории', 'category', data.categorySelect)
+
+
+    .content
+      .two-thirds-screen
+        .two-thirds-screen__left-side
+          +area-chart('prices', 'prices-pg')
+          +table(data.tableData, true)
+
+        .two-thirds-screen__right-side
+          +table-most-commented
+
+
+
+

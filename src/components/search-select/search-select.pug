@@ -1,0 +1,28 @@
+mixin search-select(title, name, items, mixes)
+
+  .search-select(class=(mixes) && `${mixes}__search-select` data-name=`${name}` data-value=`${items[0]}`)
+    .search-select__header
+      p.search-select__title= title
+      p.search-select__choice= items[0]
+
+      img.search-select__btn-toggle(src=require('../../public/img/icons/triangle.svg') alt='Иконка выпадающего списка')
+
+    .search-select__body.fade-out
+      .search-select__search-panel
+        fieldset.search-select__search-group
+          input.search-select__search-input(type='text')
+          img.search-select__search-icon(src=require('../../components/search-select/img/loupe.svg') alt='Иконка поиска')
+
+      .search-select__list-container
+        ul.search-select__list
+          each item, idx in items
+            if (idx !== 0)
+              li.search-select__item(data-value=`${item}`)
+                +checkbox
+                | #{item}
+                  
+
+      .search-select__footer
+        +btn('Сбросить все', 'search-select', 'btn--gray')
+
+

@@ -1,0 +1,6 @@
+mixin checkbox-select(type, label)
+
+  .checkbox-select(data-type=`${type}` data-selected='false')
+    +checkbox
+
+    p.checkbox-select__label= label

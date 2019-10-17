@@ -1,0 +1,9 @@
+mixin tooltip(isShow, mixes)
+
+  .tooltip(class=(isShow) && 'tooltip--show' class=(mixes) && `${mixes}__tooltip`)
+    button.tooltip__btn(type='button')
+      img.tooltip__icon(src=require('../../components/tooltip/img/question-icon.svg') alt='Иконка')
+
+    .tooltip__popup.fade-out Значимость этих проблем настолько очевидна, что постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям.
+
+

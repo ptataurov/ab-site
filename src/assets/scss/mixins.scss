@@ -3,6 +3,30 @@ $md: 767.98px;
 $lg: 991.98px;
 $xl: 1199.98px;
 
+@mixin mq-less-sm {
+  @media (max-width: $sm) {
+    @content;
+  }
+}
+
+@mixin mq-less-md {
+  @media (max-width: $md) {
+    @content;
+  }
+}
+
+@mixin mq-less-lg {
+  @media (max-width: $lg) {
+    @content;
+  }
+}
+
+@mixin mq-less-xl {
+  @media (max-width: $xl) {
+    @content;
+  }
+}
+
 @mixin less-sm {
   @media (max-width: $sm) {
     @content;
@@ -27,40 +51,11 @@ $xl: 1199.98px;
   }
 }
 
-@mixin importFont($name, $weight) {
-  @font-face {
-    font-weight: $weight;
-    font-family: $name;
-    font-display: swap;
-    font-style: normal;
-    @content;
-  }
-}
-
-@mixin max-width {
-  max-width: 1600px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-@mixin container {
-  max-width: 1280px;
-  margin-right: auto;
-  margin-left: auto;
-
-  @media (max-width: 1309.98px) {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-}
-
 @mixin img-resp {
   width: 100%;
   height: auto;
 }
 
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@mixin container {
+  padding: 0 40px;
 }

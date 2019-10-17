@@ -1,0 +1,18 @@
+mixin modal-user-add(mixes)
+
+  -
+    const modalAddUser = [
+      {
+        "label": "E-mail",
+        "placeholder": "Ваша почта",
+        "type": "email"
+      },
+      {
+        "label": "Пароль",
+        "placeholder": "Ваш пароль",
+        "type": "password"
+      }
+    ]
+
+  +modal('Добавить пользователя', modalAddUser, 'Войти', 'addUser', false, true)
+

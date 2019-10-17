@@ -1,0 +1,45 @@
+mixin rating-select(title, name, mixes)
+
+  .rating-select(class=(mixes) && `${mixes}__rating-select` data-name=`${name}` data-value='Не выбрано')
+    .rating-select__header
+      p.rating-select__title= title
+      p.rating-select__choice= 'Не выбрано'
+      img.rating-select__btn-toggle(src=require('../../public/img/icons/triangle.svg') alt='Иконка выпадающего списка')
+
+    .rating-select__body.fade-out
+        .rating-select__list-container
+          ul.rating-select__list
+            each item, idx in [1, 2, 3, 4, 5]
+              li.rating-select__item(data-value=`${item}`)
+                each star, idx in [1, 2, 3, 4, 5]
+                  case item
+                    when 1
+                      if star === 1
+                        include ../../public/img/icons/star.svg
+                      else
+                        include ../../public/img/icons/star-disabled.svg
+                      - break
+                    when 2
+                      if star <= 2
+                        include ../../public/img/icons/star.svg
+                      else
+                        include ../../public/img/icons/star-disabled.svg
+                      - break
+                    when 3
+                      if star <= 3
+                        include ../../public/img/icons/star.svg
+                      else
+                        include ../../public/img/icons/star-disabled.svg
+                      - break
+                    when 4
+                      if star <= 4
+                        include ../../public/img/icons/star.svg
+                      else
+                        include ../../public/img/icons/star-disabled.svg
+                      - break
+                    when 5
+                      if star <= 5
+                        include ../../public/img/icons/star.svg
+                      else
+                        include ../../public/img/icons/star-disabled.svg
+                      - break

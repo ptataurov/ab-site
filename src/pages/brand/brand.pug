@@ -1,0 +1,42 @@
+extends ~@/pages/layout/layout
+
+block title
+  title
+
+block container
+
+  - const data = require('./data.json')
+
+
+  #brand-pg
+
+    .filter
+      +select('Категории', 'source_category_id', ['По месяцам', 'По месяцам', 'По неделям', 'По дням'])
+
+    +tabs(data.tabs, 'brand-pg')
+
+    .content
+      .tab(data-tab='about')
+        +indicators-section(data.indicators, true, 'brand-pg')
+
+        .double-screen
+          +area-chart('shelf', 'brand-pg')
+          +table(data.tableData, false, 'brand-pg')
+
+        .double-screen
+          +area-chart('first', 'brand-pg')
+          +table(data.tableData, false, 'brand-pg')
+
+      .tab.tab--hidden(data-tab='reviews')
+        +indicators-section(data.indicators, true, 'brand-pg')
+        +reviews('brand-pg')
+
+      .tab.tab--hidden(data-tab='shelf')
+        +table(data.tableData, true, 'brand-pg')
+
+      .tab.tab--hidden(data-tab='products')
+        +table(data.tableData, true, 'brand-pg')
+
+
+
+

@@ -1,0 +1,7 @@
+mixin nav(activeIdx, mixes)
+
+  - const data = require('../../assets/data/links.json')
+
+  nav.nav(class=(mixes) && `${mixes}__nav`)
+    each link, idx in data.salesLinks
+      a.nav__link(class=(idx === activeIdx) && 'nav__link--active' href=`/${link.href}`)= link.label

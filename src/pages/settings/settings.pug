@@ -1,0 +1,24 @@
+extends ~@/pages/layout/layout
+
+block title
+  title
+
+block container
+
+  - const data = require('./data.json')
+
+
+  #settings-pg
+  
+    .content
+      form.form
+        +input('ФИО', null, null, 'settings-pg', false, true)
+        +input('Email', null, 'email', 'settings-pg', false, true)
+        +input('Пароль', null, 'password', 'settings-pg', false)
+        +input('Повторить пароль', null, 'password', 'settings-pg', false)
+        +input('Название организации', null, null, 'settings-pg', false)
+        +input('Адрес организации', null, null, 'settings-pg', false)
+        +input('ИНН организации', null, null, 'settings-pg', false)
+        +radio-input('Уведомления о новых отзывах', ['Выключено', 'Все', 'Только негативные'], 'settings-pg')
+        +checkbox-input('Настройка', ['Настройка', 'Настройка 2'], 'settings-pg')
+        +btn('Сохранить', 'submit')

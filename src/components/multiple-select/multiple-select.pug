@@ -1,0 +1,20 @@
+mixin multiple-select(title, name, items, mixes)
+
+  .multiple-select(class=(mixes) && `${mixes}__multiple-select` data-name=`${name}` data-value=`${items[0]}`)
+
+    .multiple-select__header
+      p.multiple-select__title= title
+      p.multiple-select__choice= items[0]
+
+      img.multiple-select__btn-toggle(src=require('../../public/img/icons/triangle.svg') alt='Иконка выпадающего списка')
+
+    .multiple-select__body.fade-out
+      .multiple-select__list-container
+        ul.multiple-select__list
+          each item, idx in items
+            if (idx !== 0)
+              li.multiple-select__item(data-value=`${item}`)
+                +checkbox
+                | #{item}
+
+

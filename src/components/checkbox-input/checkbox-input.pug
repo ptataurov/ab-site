@@ -1,0 +1,7 @@
+mixin checkbox-input(label, items, mixes)
+
+  .checkbox-input(class=(mixes) && `${mixes}__checkbox-input`)
+    p.checkbox-input__label= label
+    each item in items
+      +checkbox-label(item, false, 'checkbox-input')
+

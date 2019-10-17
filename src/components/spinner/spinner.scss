@@ -1,0 +1,41 @@
+.spinner {
+  width: 60px;
+  padding: 8px;
+  border-radius: 50%;
+  animation: lds-dual-ring 1.2s linear infinite;
+
+  &--hidden {
+    display: none;
+  }
+
+  &--show {
+    display: inline;
+  }
+}
+
+// Keyframes
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Media queries
+
+@include less-xl {
+}
+
+@include less-lg {
+}
+
+@include less-md {
+}
+
+@include less-sm {
+}
+
+// Mixes

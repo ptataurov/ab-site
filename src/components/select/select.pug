@@ -1,0 +1,19 @@
+mixin select(title, name, items, mixes)
+
+  .select(class=(mixes) && `${mixes}__select` data-name=`${name}` data-value=`${items[0]}`)
+    .select__header
+      p.select__title= title
+      p.select__choice= items[0]
+
+      img.select__btn-toggle(src=require('../../public/img/icons/triangle.svg') alt='Иконка выпадающего списка')
+
+    .select__body.fade-out
+      .select__list-container
+        ul.select__list
+          each item, idx in items
+            if (idx !== 0)
+              li.select__item(data-value=`${item}` data-name=`${item}`)
+                +checkbox((idx === 1))
+                | #{item}
+
+

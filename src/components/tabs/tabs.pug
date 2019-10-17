@@ -1,0 +1,7 @@
+mixin tabs(tabs, mixes)
+
+  .tabs(class=(mixes) && `${mixes}__tabs`)
+    each tab, idx in tabs
+      .tabs__container
+        button.tabs__btn(class=(idx === 0) && 'tabs__btn--active' type='button' data-target=(tab.target) && `${tab.target}`)= tab.label
+        +tooltip(false, 'tabs')

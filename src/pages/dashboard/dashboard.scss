@@ -1,0 +1,74 @@
+#dashboard-pg {
+  .charts {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  .left-charts {
+    flex-basis: 66.666666%;
+  }
+
+  .right-charts {
+    flex-basis: 33.333333%;
+    padding-left: 20px;
+  }
+
+  .form {
+    margin-bottom: 20px;
+  }
+
+  .btns {
+    margin-bottom: 20px;
+  }
+}
+
+// Mixes
+
+.dashboard-pg__area-chart {
+  &:first-child {
+    margin-bottom: 20px;
+  }
+}
+
+.dashboard-pg__nav {
+  padding-top: 30px;
+}
+
+.dashboard-pg__reviews {
+  margin-bottom: 20px;
+}
+
+.dashboard-pg__table {
+  margin-bottom: 20px;
+}
+
+.dashboard-pg__indicators-section {
+  margin-bottom: 20px;
+}
+
+.dashboard-pg__spinner {
+  margin-bottom: 20px;
+}
+
+.dashboard-pg__h1,
+.dashboard-pg__h2,
+.dashboard-pg__h3,
+.dashboard-pg__h4 {
+  margin-bottom: 20px;
+}
+
+.dashboard-pg__text {
+  margin-bottom: 30px;
+}
+
+.dashboard-pg__sm-text {
+  margin-bottom: 20px;
+}
+
+.dashboard-pg__list {
+  margin-bottom: 20px;
+}
+
+.dashboard-pg__modal {
+  position: static;
+  transform: none;
+}

@@ -1,0 +1,9 @@
+mixin alert(type, isShow, mixes)
+
+  .alert(class=(mixes) && `${mixes}__alert` class=(type) && `alert--${type}` class=(isShow) && 'alert--show')
+    header.alert__header
+      h6.alert__title Уведомление
+      button.alert__btn-close(type='button')
+    p.alert__text Текст уведомления
+
+

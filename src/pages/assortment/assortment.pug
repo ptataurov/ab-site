@@ -1,0 +1,21 @@
+extends ../layout/layout
+
+block container
+
+  - const data = require('./data.json')
+
+  #assortment-pg
+
+    .container
+
+      .filter
+
+        +select-input('name', 'Название', 'Название товара')
+
+        +select('Категория', 'category', data.categorySelect)
+
+        +select('Назначение', 'assignment', data.assignmentSelect)
+
+      .content
+
+        +table(data.tableData, true, 'assortment-pg')

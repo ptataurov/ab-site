@@ -1,0 +1,24 @@
+#brand-pg {
+}
+
+// Mixes
+
+.brand-pg__indicators-section {
+  margin-bottom: 10px;
+}
+
+.brand-pg__tabs {
+  margin-bottom: 20px;
+}
+
+#brand-pg .select {
+  min-width:300px;
+}
+
+// Media
+
+@include mq-less-lg {
+  .brand-pg__area-chart {
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,25 @@
+extends ../layout/layout
+
+block container
+
+  - const data = require('./data.json')
+
+  #rivals-pg 
+
+    .container 
+
+      .filter
+        +checkbox-select('increasing', 'Нарастающий')
+
+        +select('Сортировка', 'sort', ['По дням', 'По дням', 'По неделям'])
+
+        +date-select
+
+
+      +tabs(data.tabs, 'rivals-pg')
+      
+      .content
+
+        +area-chart('rivals', 'rivals-pg')
+
+        +table(data.tableData, true, 'rivals-pg')

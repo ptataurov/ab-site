@@ -1,0 +1,80 @@
+.tooltip {
+  position: relative;
+
+  &--show {
+    z-index: 100;
+
+    .tooltip__popup {
+      display: block;
+    }
+  }
+}
+
+.tooltip__btn {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid #dfe6ed;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.tooltip__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tooltip__popup {
+  position: absolute;
+  top: 0;
+  display: none;
+  max-width: 280px;
+  padding: 15px 20px;
+  color: #26212b;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: normal;
+  text-transform: none;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: -2px 2px 4px rgba(128, 152, 213, 0.074983);
+  transition: transform 0ms;
+
+  &--position-left {
+    left: -10px;
+    transform: translate(-100%, 0);
+  }
+
+  &--position-right {
+    right: -10px;
+    transform: translate(100%, 0);
+  }
+
+  &--position-center {
+    position: fixed;
+    top: auto;
+    bottom: 24px;
+    left: 50%;
+    width: calc(100vw - 48px);
+    transform: translateX(-50%);
+  }
+}
+
+// Media queries
+
+@include less-xl {
+}
+
+@include less-lg {
+}
+
+@include less-md {
+}
+
+@include less-sm {
+}
+
+// Mixes

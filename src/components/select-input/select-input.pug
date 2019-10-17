@@ -1,0 +1,7 @@
+mixin select-input(type, label, placeholder, mixes)
+
+  .select-input(class=(mixes) && `${mixes}__select` data-type=`${type}`)
+    p.select-input__label= label
+    input.select-input__self(type='text' placeholder=(placeholder) && `${placeholder}`)
+      
+

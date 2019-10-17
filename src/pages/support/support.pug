@@ -1,0 +1,27 @@
+extends ~@/pages/layout/layout
+
+block title
+  title
+
+block container
+
+  - const data = require('./data.json')
+
+  #support-pg
+
+    +tabs(data.tabs, 'support-pg')
+
+    .filter
+      +select-input('search', 'Поиск')
+
+    .content
+
+      +btn('Создать тикет', 'button', null, 'support-pg')      
+
+
+      .tab(data-tab='open')
+        +table(data.tableOpen)
+
+      .tab.tab--hidden(data-tab='completed')
+        +table(data.tableCompleted)
+

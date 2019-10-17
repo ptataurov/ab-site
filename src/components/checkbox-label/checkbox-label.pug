@@ -1,0 +1,6 @@
+mixin checkbox-label(label, isActive, mixes)
+
+  .checkbox-label(class=(mixes) && `${mixes}__checkbox-label`)
+    +checkbox(isActive)
+    | #{label}
+
